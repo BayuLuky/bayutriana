@@ -3,9 +3,9 @@
 Generator Undangan Digital Per-Tamu (versi statis, tanpa backend)
 ===================================================================
 Membaca daftar tamu dari CSV, lalu membuat SATU file HTML terpisah
-untuk setiap tamu. Nama tamu langsung "dipanggang" ke dalam file
-masing-masing (bukan lewat parameter URL), dan nama file memakai
-token acak -- supaya:
+untuk setiap tamu di dalam folder u/. Nama tamu langsung "dipanggang"
+ke dalam file masing-masing (bukan lewat parameter URL), dan nama file
+memakai token acak -- supaya:
 
   1. Setiap tamu punya URL sendiri: https://domainanda.com/u/{token}.html
   2. Isi satu file tidak membocorkan nama/token tamu lain, karena
@@ -20,12 +20,18 @@ perlu backend -- lihat dokumen arsitektur yang sudah dibuat
 sebelumnya.
 
 CARA PAKAI:
-  1. Edit guest-data/daftar-tamu-contoh.csv (atau buat CSV baru)
-     dengan kolom: nama, grup, max_pax
+  1. Edit daftar-tamu-CONTOH.csv (atau buat CSV baru) dengan kolom:
+     nama, grup, max_pax
   2. Jalankan: python3 generate_undangan.py
-  3. Hasilnya ada di folder output/u/ -- unggah SEMUA isi folder itu
-     ke hosting statis Anda (Netlify, Vercel, GitHub Pages, dst),
-     lalu bagikan link dari ringkasan-link.csv ke tamu masing-masing.
+  3. Hasilnya ada di folder u/ -- unggah folder itu (beserta
+     musik-pernikahan.mp3 di dalamnya) ke hosting statis Anda
+     (Netlify, Vercel, GitHub Pages, dst), lalu bagikan link dari
+     ringkasan-link.csv ke tamu masing-masing.
+
+CATATAN: index.html adalah SATU-SATUNYA sumber desain undangan --
+skrip ini memakainya sebagai template. Jangan buat salinan lain;
+edit index.html, lalu jalankan ulang skrip ini untuk memperbarui
+seluruh undangan tamu di folder u/.
 """
 
 import csv
@@ -37,10 +43,10 @@ from pathlib import Path
 # =====================================================================
 # KONFIGURASI -- sesuaikan path bila perlu
 # =====================================================================
-TEMPLATE_PATH = Path("template-base.html")
-GUEST_CSV_PATH = Path("guest-data/daftar-tamu-contoh.csv")
-OUTPUT_DIR = Path("output/u")
-SUMMARY_CSV_PATH = Path("output/ringkasan-link.csv")
+TEMPLATE_PATH = Path("index.html")
+GUEST_CSV_PATH = Path("daftar-tamu-CONTOH.csv")
+OUTPUT_DIR = Path("u")
+SUMMARY_CSV_PATH = Path("ringkasan-link.csv")
 BASE_URL = "https://domainanda.com/u"  # GANTI dengan domain hosting Anda
 
 
@@ -147,7 +153,8 @@ def main():
     print("PENTING:")
     print("- Jangan unggah ringkasan-link.csv ke hosting publik -- itu berisi")
     print("  pemetaan nama ke link asli, cukup simpan untuk Anda sendiri.")
-    print("- Unggah HANYA isi folder output/u/*.html ke hosting statis Anda.")
+    print(f"- Unggah isi folder {OUTPUT_DIR}/ (termasuk musik-pernikahan.mp3")
+    print("  di dalamnya) ke hosting statis Anda.")
     print("- Matikan 'directory listing' di hosting Anda supaya folder /u/")
     print("  tidak bisa di-browse dan menampilkan semua nama file token.")
 

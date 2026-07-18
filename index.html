@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>The Wedding of Bayu &amp; Triana</title>
 <meta name="description" content="Undangan pernikahan Bayu Luky Istanto &amp; Triana Putri Nastiti — Sabtu, 2 Juni 2027, Kediri.">
+
+<!-- Open Graph & Twitter Card — supaya link ini tampil dengan judul, deskripsi,
+     dan gambar preview saat dibagikan di WhatsApp/Telegram/Facebook, dst.
+     PENTING: letakkan gambar bernama "og-image.jpg" (disarankan 1200x630px)
+     di folder YANG SAMA dengan file HTML ini agar gambar preview muncul. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="Undangan Pernikahan Bayu &amp; Triana">
+<meta property="og:title" content="The Wedding of Bayu &amp; Triana">
+<meta property="og:description" content="Undangan pernikahan Bayu Luky Istanto &amp; Triana Putri Nastiti — Sabtu, 2 Juni 2027, Kediri.">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Wedding of Bayu &amp; Triana">
+<meta name="twitter:description" content="Undangan pernikahan Bayu Luky Istanto &amp; Triana Putri Nastiti — Sabtu, 2 Juni 2027, Kediri.">
+<meta name="twitter:image" content="og-image.jpg">
+
 <!-- Cegah halaman ter-index/muncul di hasil pencarian Google, dsb.
      Ini bukan keamanan, tapi mencegah URL bocor lewat mesin pencari. -->
 <meta name="robots" content="noindex, nofollow, noarchive">
@@ -242,6 +260,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .btn:hover{ background:var(--color-sage-dark); transform:translateY(-2px); box-shadow:0 12px 26px -10px rgba(138,155,126,0.75); }
 .btn:active{ transform:translateY(0); }
+.btn:disabled{ opacity:0.6; cursor:not-allowed; transform:none; box-shadow:none; }
 
 .btn--outline{
   background:transparent;
@@ -1275,7 +1294,13 @@ footer{
     ],
     // Isi dengan path gambar QRIS Anda (mis. "qris.png") agar tampil di tab
     // "QRIS" — kosongkan ("") untuk tetap memakai placeholder.
-    qrisImage: ""
+    qrisImage: "",
+    // URL Web App Google Apps Script (lihat panduan di file
+    // "rsvp-apps-script.gs") untuk menyimpan RSVP & ucapan tamu secara
+    // permanen ke Google Sheets dan menampilkannya ke semua tamu.
+    // Kosongkan ("") untuk memakai penyimpanan sementara di memori saja
+    // (ucapan hilang begitu halaman ditutup, dan tidak terkirim ke Anda).
+    rsvpEndpoint: "https://script.google.com/macros/s/AKfycbzpEdHHWQatJGKOA6nhcBuo1f5UowwCF51YN6R5Jfk7Iou_o3YL0odP0LggoZn2g0Zp3g/exec"
   };
 
   /* =======================================================
@@ -1410,7 +1435,22 @@ footer{
     audio.addEventListener("playing", function(){ setPlaying(true); });
     audio.addEventListener("error", function(){ /* file musik belum tersedia — tombol tetap bisa dipakai nanti */ });
 
-    // Coba putar otomatis begitu undangan dibuka (masih dalam gesture klik pengguna)
+    // 1) Coba putar otomatis begitu halaman dimuat.
+    tryPlay();
+
+    // 2) Browser umumnya memblokir autoplay bersuara tanpa interaksi user,
+    //    jadi begitu ada sentuhan/klik pertama di mana pun pada halaman
+    //    (termasuk klik tombol "Buka Undangan"), langsung coba putar lagi.
+    var startedByGesture = false;
+    function startOnFirstGesture(){
+      if(startedByGesture || !audio.paused) return;
+      startedByGesture = true;
+      tryPlay();
+      document.removeEventListener("pointerdown", startOnFirstGesture);
+      document.removeEventListener("keydown", startOnFirstGesture);
+    }
+    document.addEventListener("pointerdown", startOnFirstGesture);
+    document.addEventListener("keydown", startOnFirstGesture);
     openBtn.addEventListener("click", function(){ tryPlay(); });
   }
 
@@ -1670,12 +1710,20 @@ footer{
   }
 
   /* =======================================================
-     RSVP — disimpan di memori (array JS), bukan localStorage
+     RSVP — dikirim ke Google Sheet lewat Apps Script Web App
+     (WEDDING.rsvpEndpoint, lihat rsvp-apps-script.gs untuk panduan
+     pemasangan). Jika endpoint belum diisi, ucapan hanya disimpan
+     sementara di memori (array JS) sebagai fallback -- hilang saat
+     halaman ditutup dan tidak terkirim ke mempelai.
      ======================================================= */
   var ucapanData = [];
+  var UCAPAN_EMPTY_TEXT = "Jadilah yang pertama mengirimkan ucapan dan doa.";
 
   function initRSVP(){
     var form = document.getElementById("rsvpForm");
+    var submitBtn = form.querySelector(".rsvp-submit");
+    var submitLabel = submitBtn.textContent;
+
     form.addEventListener("submit", function(e){
       e.preventDefault();
       var name = document.getElementById("rsvpName").value.trim();
@@ -1683,13 +1731,64 @@ footer{
       var attendance = form.querySelector('input[name="attendance"]:checked').value;
       if(!name || !message) return;
 
-      ucapanData.unshift({ name:name, attendance:attendance, message:message });
-      renderUcapan();
-      burstPetals(form.querySelector(".rsvp-submit"));
-      form.reset();
-      showToast("Terima kasih atas ucapan & doanya!");
+      var entry = { name:name, attendance:attendance, message:message };
+
+      if(!WEDDING.rsvpEndpoint){
+        ucapanData.unshift(entry);
+        renderUcapan();
+        burstPetals(submitBtn);
+        form.reset();
+        showToast("Terima kasih atas ucapan & doanya!");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Mengirim...";
+      sendRSVP(entry).then(function(){
+        burstPetals(submitBtn);
+        form.reset();
+        showToast("Terima kasih atas ucapan & doanya!");
+        return fetchUcapan();
+      }).catch(function(){
+        showToast("Gagal mengirim, silakan coba lagi.");
+      }).then(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitLabel;
+      });
     });
-    renderUcapan();
+
+    if(WEDDING.rsvpEndpoint){ fetchUcapan(); } else { renderUcapan(); }
+  }
+
+  /* Kirim satu RSVP ke Apps Script. Content-Type "text/plain" sengaja
+     dipakai (bukan application/json) supaya browser tidak mengirim
+     preflight OPTIONS, yang tidak didukung oleh Apps Script Web App. */
+  function sendRSVP(entry){
+    return fetch(WEDDING.rsvpEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(entry)
+    }).then(function(res){ return res.json(); }).then(function(json){
+      if(!json || !json.ok){ throw new Error((json && json.error) || "Gagal mengirim"); }
+      return json;
+    });
+  }
+
+  /* Ambil seluruh RSVP & ucapan tamu dari Google Sheet lalu render ulang. */
+  function fetchUcapan(){
+    var empty = document.getElementById("ucapanEmpty");
+    if(empty) empty.textContent = "Memuat ucapan...";
+    return fetch(WEDDING.rsvpEndpoint)
+      .then(function(res){ return res.json(); })
+      .then(function(json){
+        if(json && json.ok && Array.isArray(json.data)){ ucapanData = json.data; }
+        if(empty) empty.textContent = UCAPAN_EMPTY_TEXT;
+        renderUcapan();
+      })
+      .catch(function(){
+        if(empty) empty.textContent = "Gagal memuat ucapan. Muat ulang halaman untuk mencoba lagi.";
+        renderUcapan();
+      });
   }
 
   function renderUcapan(){
