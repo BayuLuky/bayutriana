@@ -1,0 +1,1754 @@
+<!-- Undangan untuk: Keluarga Besar Hartono (Tetangga) -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Wedding of Bayu &amp; Triana</title>
+<meta name="description" content="Undangan pernikahan Bayu Luky Istanto &amp; Triana Putri Nastiti — Sabtu, 2 Juni 2027, Kediri.">
+<!-- Cegah halaman ter-index/muncul di hasil pencarian Google, dsb.
+     Ini bukan keamanan, tapi mencegah URL bocor lewat mesin pencari. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   0. DESIGN TOKENS — ubah warna & font di sini bila perlu
+   ========================================================= */
+:root{
+  --color-bg:        #FAF8F5; /* putih gading — dasar halaman */
+  --color-bg-soft:   #F1ECE2; /* gading lebih gelap — selang-seling section */
+  --color-card:      #FFFFFF;
+  --color-sage:      #8A9B7E; /* aksen sage green */
+  --color-sage-dark: #6E7F63;
+  --color-gold:      #C0A97D; /* aksen dusty gold */
+  --color-gold-dark: #A88D5D;
+  --color-text:      #2E2E2E; /* charcoal */
+  --color-text-muted:#7A756C;
+  --color-line:      rgba(46,46,46,0.12);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-script:  'Great Vibes', cursive;
+  --font-body:    'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  --gap-section:      104px;
+  --gap-section-mob:  64px;
+  --max-w:            700px;
+
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =========================================================
+   1. RESET & BASE
+   ========================================================= */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:var(--font-body);
+  background:var(--color-bg);
+  color:var(--color-text);
+  line-height:1.65;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body.lock-scroll{ position:fixed; overflow:hidden; width:100%; height:100%; }
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:999;
+  pointer-events:none;
+  opacity:0.035;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+img{ max-width:100%; display:block; }
+button{ font-family:inherit; cursor:pointer; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+input,textarea{ font-family:inherit; font-size:inherit; }
+
+h1,h2,h3{ font-family:var(--font-display); font-weight:500; letter-spacing:0.01em; }
+
+.section{
+  padding: var(--gap-section) 24px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position:relative;
+}
+.section--wide{ max-width:920px; }
+.section--soft{ background:var(--color-bg-soft); max-width:none; }
+.section--soft > .section-inner{ max-width: var(--max-w); margin:0 auto; }
+.section--soft.section--wide > .section-inner{ max-width:920px; }
+
+@media (max-width:640px){
+  .section{ padding: var(--gap-section-mob) 20px; }
+}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:12px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--color-sage-dark);
+  font-weight:500;
+}
+
+.section-title{
+  font-size:clamp(28px,5vw,38px);
+  text-align:center;
+  margin-top:10px;
+  font-style:italic;
+}
+
+.divider{
+  width:1px;
+  height:44px;
+  background:linear-gradient(to bottom, transparent, var(--color-gold), transparent);
+  margin:22px auto;
+}
+
+/* reveal-on-scroll */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity 0.8s var(--ease-soft), transform 0.8s var(--ease-soft);
+}
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+  html{ scroll-behavior:auto; }
+}
+
+/* focus states */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--color-sage);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* =========================================================
+   2. ORNAMENT (SVG line-art & monogram)
+   ========================================================= */
+.branch{
+  color:var(--color-sage);
+  opacity:0.55;
+  width:46px;
+  height:78px;
+}
+.branch--flip{ transform:scaleX(-1); }
+.branch--mini{ width:26px; height:44px; opacity:0.45; }
+
+.monogram{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  border:1px solid var(--color-gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--font-script);
+  font-size:26px;
+  color:var(--color-gold-dark);
+  margin:0 auto;
+  box-shadow:0 0 0 5px var(--color-bg), 0 0 0 6px rgba(192,169,125,0.32);
+}
+
+/* =========================================================
+   3. COVER
+   ========================================================= */
+#cover{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:var(--color-bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform 1s var(--ease-soft);
+}
+#cover.is-open{ transform:translateY(-100%); }
+#cover.is-hidden{ display:none; }
+
+.cover-frame{
+  position:absolute;
+  inset:18px;
+  border:1px solid var(--color-line);
+  pointer-events:none;
+}
+.cover-corner{
+  position:absolute;
+  width:42px; height:68px;
+  color:var(--color-sage);
+  opacity:0.6;
+}
+.cover-corner--tl{ top:-1px; left:-1px; }
+.cover-corner--br{ bottom:-1px; right:-1px; transform:rotate(180deg); }
+
+.cover-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:32px;
+  max-width:420px;
+}
+.cover-eyebrow{
+  font-size:12px;
+  letter-spacing:0.34em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+  margin-bottom:22px;
+}
+.cover-names{
+  font-family:var(--font-script);
+  font-size:clamp(40px,10vw,56px);
+  color:var(--color-text);
+  line-height:1.3;
+  margin:10px 0 26px;
+}
+.cover-guest-label{
+  font-size:12px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+  margin-bottom:6px;
+}
+.cover-guest-name{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:22px;
+  margin-bottom:34px;
+  min-height:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 30px;
+  background:var(--color-sage);
+  color:#fff;
+  border:none;
+  border-radius:999px;
+  font-size:13px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  transition:background 0.35s var(--ease-soft), transform 0.35s var(--ease-soft), box-shadow 0.35s var(--ease-soft);
+  box-shadow:0 8px 22px -10px rgba(138,155,126,0.6);
+}
+.btn:hover{ background:var(--color-sage-dark); transform:translateY(-2px); box-shadow:0 12px 26px -10px rgba(138,155,126,0.75); }
+.btn:active{ transform:translateY(0); }
+
+.btn--outline{
+  background:transparent;
+  color:var(--color-gold-dark);
+  border:1px solid var(--color-gold);
+  box-shadow:none;
+}
+.btn--outline:hover{ background:var(--color-gold); color:#fff; }
+
+.btn-icon{ width:14px; height:14px; }
+
+/* =========================================================
+   4. HERO
+   ========================================================= */
+#hero{
+  text-align:center;
+  padding-top:calc(var(--gap-section) + 20px);
+  background:radial-gradient(ellipse 620px 420px at 50% 0%, rgba(138,155,126,0.07), transparent 70%);
+}
+.hero-eyebrow{ display:flex; align-items:center; justify-content:center; gap:14px; }
+.hero-eyebrow .line{ width:34px; height:1px; background:var(--color-gold); }
+
+.hero-names{
+  font-size:clamp(38px,7.5vw,60px);
+  font-style:italic;
+  margin:24px 0 6px;
+}
+.hero-name{ display:block; }
+.hero-amp-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin:8px 0;
+}
+.hero-amp{
+  font-family:var(--font-script);
+  font-size:0.55em;
+  color:var(--color-sage-dark);
+  line-height:1;
+}
+@media (max-width:480px){
+  .hero-amp-row .branch--mini{ width:18px; height:30px; }
+  .hero-amp-row{ gap:8px; }
+}
+.hero-date{
+  font-size:15px;
+  letter-spacing:0.18em;
+  color:var(--color-text-muted);
+  margin-top:14px;
+}
+.hero-tagline{
+  max-width:420px;
+  margin:26px auto 0;
+  font-size:15px;
+  color:var(--color-text-muted);
+}
+.scroll-cue{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  margin:40px auto 0;
+  border-radius:50%;
+  border:1px solid var(--color-line);
+  color:var(--color-sage-dark);
+  animation:cue-bounce 2.4s ease-in-out infinite;
+  transition:border-color 0.3s var(--ease-soft), color 0.3s var(--ease-soft);
+}
+.scroll-cue:hover{ border-color:var(--color-sage); color:var(--color-sage-dark); }
+@keyframes cue-bounce{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(6px); }
+}
+
+/* =========================================================
+   5. QUOTE
+   ========================================================= */
+#quote{ text-align:center; }
+.quote-text{
+  font-size:clamp(19px,3.4vw,23px);
+  font-style:italic;
+  line-height:1.85;
+  color:var(--color-text);
+}
+.quote-source{
+  margin-top:18px;
+  font-size:12px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--color-sage-dark);
+}
+
+
+/* =========================================================
+   6. PROFIL MEMPELAI
+   ========================================================= */
+.profile-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:44px;
+  margin-top:52px;
+}
+@media (min-width:640px){
+  .profile-grid{ grid-template-columns:1fr auto 1fr; align-items:center; gap:20px; }
+}
+.profile-card{ text-align:center; }
+.photo-frame{
+  position:relative;
+  width:132px; height:132px;
+  margin:0 auto 22px;
+}
+.photo-frame::before,.photo-frame::after{
+  content:"";
+  position:absolute;
+  width:20px; height:20px;
+  border:1px solid var(--color-gold);
+  opacity:0.75;
+}
+.photo-frame::before{ top:-9px; left:-9px; border-right:none; border-bottom:none; }
+.photo-frame::after{ bottom:-9px; right:-9px; border-left:none; border-top:none; }
+.profile-photo{
+  width:100%; height:100%;
+  border-radius:50%;
+  background:var(--color-bg-soft);
+  border:1px solid var(--color-line);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--color-sage);
+  overflow:hidden;
+}
+.profile-name{ font-size:24px; font-style:italic; margin-bottom:8px; }
+.profile-parents{ font-size:13.5px; color:var(--color-text-muted); line-height:1.7; }
+.profile-divider{
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-script);
+  font-size:34px;
+  color:var(--color-gold);
+}
+@media (max-width:639px){
+  .profile-divider{ transform:rotate(90deg); margin:-6px 0; }
+}
+
+/* =========================================================
+   7. COUNTDOWN
+   ========================================================= */
+#countdown{ text-align:center; }
+.countdown-grid{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:44px;
+  flex-wrap:wrap;
+}
+.countdown-box{
+  position:relative;
+  width:82px;
+  padding:18px 0;
+  border:1px solid var(--color-line);
+  background:var(--color-card);
+}
+.countdown-box::before,.countdown-box::after{
+  content:"";
+  position:absolute;
+  width:12px; height:12px;
+  border:1px solid var(--color-gold);
+  opacity:0.6;
+}
+.countdown-box::before{ top:6px; left:6px; border-right:none; border-bottom:none; }
+.countdown-box::after{ bottom:6px; right:6px; border-left:none; border-top:none; }
+.countdown-num{
+  font-family:var(--font-display);
+  font-size:30px;
+  color:var(--color-sage-dark);
+}
+.countdown-label{
+  margin-top:6px;
+  font-size:10.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+}
+.countdown-done{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:22px;
+  color:var(--color-sage-dark);
+  margin-top:44px;
+}
+
+/* =========================================================
+   8. DETAIL ACARA
+   ========================================================= */
+.event-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  margin-top:48px;
+}
+@media (min-width:640px){
+  .event-grid{ grid-template-columns:1fr 1fr; }
+}
+.event-card{
+  position:relative;
+  background:var(--color-card);
+  border:1px solid var(--color-line);
+  padding:40px 28px;
+  text-align:center;
+}
+.event-card::before,.event-card::after{
+  content:"";
+  position:absolute;
+  width:16px; height:16px;
+  border:1px solid var(--color-gold);
+  opacity:0.6;
+}
+.event-card::before{ top:10px; left:10px; border-right:none; border-bottom:none; }
+.event-card::after{ bottom:10px; right:10px; border-left:none; border-top:none; }
+.event-kind{
+  font-family:var(--font-script);
+  font-size:30px;
+  color:var(--color-gold-dark);
+  margin-bottom:14px;
+}
+.event-day{ font-size:15px; font-weight:500; margin-bottom:2px; }
+.event-time{ font-size:13.5px; color:var(--color-text-muted); margin-bottom:16px; }
+.event-place{ font-size:14px; margin-bottom:22px; color:var(--color-text); }
+
+/* =========================================================
+   9. GALERI
+   ========================================================= */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:48px;
+}
+@media (min-width:640px){
+  .gallery-grid{ grid-template-columns:repeat(3,1fr); }
+}
+.gallery-item{
+  aspect-ratio:3/4;
+  background:
+    linear-gradient(135deg, var(--color-bg-soft) 0%, #E8E1D3 100%);
+  border:1px solid var(--color-line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--color-sage);
+  overflow:hidden;
+  position:relative;
+  transition:transform 0.5s var(--ease-soft);
+}
+.gallery-item::before,.gallery-item::after{
+  content:"";
+  position:absolute;
+  width:16px; height:16px;
+  border:1px solid var(--color-gold);
+  opacity:0;
+  transition:opacity 0.4s var(--ease-soft);
+}
+.gallery-item::before{ top:9px; left:9px; border-right:none; border-bottom:none; }
+.gallery-item::after{ bottom:9px; right:9px; border-left:none; border-top:none; }
+.gallery-item:hover::before,.gallery-item:hover::after{ opacity:0.85; }
+.gallery-item:hover{ transform:translateY(-4px); }
+.gallery-item svg{ width:30%; height:30%; opacity:0.5; }
+.gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; }
+.gallery-caption{
+  position:absolute; bottom:8px; left:0; right:0;
+  text-align:center;
+  font-size:9.5px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+}
+
+/* =========================================================
+   10. AMPLOP DIGITAL
+   ========================================================= */
+#amplop{
+  text-align:center;
+  background:radial-gradient(ellipse 520px 360px at 50% 100%, rgba(192,169,125,0.08), transparent 70%);
+}
+.bank-card{
+  position:relative;
+  margin:44px auto 0;
+  max-width:360px;
+  background:var(--color-card);
+  border:1px solid var(--color-line);
+  padding:34px 30px;
+}
+.bank-card::before,.bank-card::after{
+  content:"";
+  position:absolute;
+  width:16px; height:16px;
+  border:1px solid var(--color-gold);
+  opacity:0.6;
+}
+.bank-card::before{ top:10px; left:10px; border-right:none; border-bottom:none; }
+.bank-card::after{ bottom:10px; right:10px; border-left:none; border-top:none; }
+.bank-name{ font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-text-muted); }
+.bank-number{ font-family:var(--font-display); font-size:28px; margin:10px 0 4px; letter-spacing:0.04em; }
+.bank-owner{ font-size:13.5px; color:var(--color-text-muted); margin-bottom:22px; }
+
+/* --- Tab pilihan amplop digital --- */
+.wallet-tabs{
+  display:flex;
+  justify-content:center;
+  gap:4px;
+  margin:40px auto 0;
+  border-bottom:1px solid var(--color-line);
+  max-width:420px;
+}
+.wallet-tab{
+  background:none;
+  border:none;
+  padding:0 4px 12px;
+  margin:0 14px;
+  font-family:inherit;
+  font-size:12px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+  position:relative;
+  transition:color 0.3s var(--ease-soft);
+}
+.wallet-tab::after{
+  content:"";
+  position:absolute;
+  left:50%; bottom:-1px;
+  width:0; height:2px;
+  background:var(--color-sage);
+  transition:width 0.3s var(--ease-soft), left 0.3s var(--ease-soft);
+}
+.wallet-tab:hover{ color:var(--color-sage-dark); }
+.wallet-tab.is-active{ color:var(--color-sage-dark); }
+.wallet-tab.is-active::after{ width:100%; left:0; }
+
+.wallet-panel{ display:none; }
+.wallet-panel.is-active{ display:block; }
+
+/* --- Daftar e-wallet --- */
+.ewallet-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  max-width:360px;
+  margin:36px auto 0;
+}
+.ewallet-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:var(--color-card);
+  border:1px solid var(--color-line);
+  padding:16px 18px;
+  text-align:left;
+}
+.ewallet-item::before,.ewallet-item::after{
+  content:"";
+  position:absolute;
+  width:12px; height:12px;
+  border:1px solid var(--color-gold);
+  opacity:0.6;
+}
+.ewallet-item::before{ top:7px; left:7px; border-right:none; border-bottom:none; }
+.ewallet-item::after{ bottom:7px; right:7px; border-left:none; border-top:none; }
+.ewallet-badge{
+  width:44px; height:44px;
+  border-radius:50%;
+  background:var(--color-bg-soft);
+  border:1px solid var(--color-line);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:14px;
+  color:var(--color-sage-dark);
+  flex-shrink:0;
+}
+.ewallet-info{ flex:1; min-width:0; }
+.ewallet-name{ font-size:13px; font-weight:500; color:var(--color-text); }
+.ewallet-number{ font-size:13px; color:var(--color-text-muted); margin-top:2px; letter-spacing:0.02em; }
+.ewallet-copy{
+  font-size:10.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--color-sage-dark);
+  background:transparent;
+  border:1px solid var(--color-line);
+  border-radius:999px;
+  padding:8px 14px;
+  flex-shrink:0;
+  transition:background 0.3s var(--ease-soft), border-color 0.3s var(--ease-soft);
+}
+.ewallet-copy:hover{ background:var(--color-bg-soft); border-color:var(--color-sage); }
+
+/* --- Kartu QRIS --- */
+.qris-card{ max-width:280px; margin:36px auto 0; text-align:center; }
+.qris-frame{
+  position:relative;
+  width:216px; height:216px;
+  margin:0 auto;
+  background:var(--color-card);
+  border:1px solid var(--color-line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.qris-frame::before,.qris-frame::after{
+  content:"";
+  position:absolute;
+  width:16px; height:16px;
+  border:1px solid var(--color-gold);
+  opacity:0.6;
+}
+.qris-frame::before{ top:9px; left:9px; border-right:none; border-bottom:none; }
+.qris-frame::after{ bottom:9px; right:9px; border-left:none; border-top:none; }
+.qris-frame img{ width:100%; height:100%; object-fit:contain; padding:16px; }
+.qris-placeholder{ color:var(--color-sage); opacity:0.5; }
+.qris-placeholder svg{ width:56px; height:56px; }
+.qris-caption{ font-size:12.5px; color:var(--color-text-muted); margin-top:16px; }
+.qris-save-btn{
+  margin-top:14px;
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--color-sage-dark);
+  border-bottom:1px solid var(--color-sage-dark);
+  display:none;
+}
+.qris-save-btn.is-visible{ display:inline-block; }
+.toast{
+  position:fixed;
+  left:50%; bottom:28px;
+  transform:translate(-50%,20px);
+  background:var(--color-text);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:999px;
+  font-size:13px;
+  letter-spacing:0.04em;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.4s var(--ease-soft), transform 0.4s var(--ease-soft);
+  z-index:200;
+}
+.toast.is-visible{ opacity:1; transform:translate(-50%,0); }
+
+/* =========================================================
+   11. RSVP
+   ========================================================= */
+.rsvp-form{ margin-top:44px; display:flex; flex-direction:column; gap:18px; }
+.field label{
+  display:block;
+  font-size:12px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+  margin-bottom:8px;
+}
+.field input[type="text"],
+.field textarea{
+  width:100%;
+  border:none;
+  border-bottom:1px solid var(--color-line);
+  background:transparent;
+  padding:10px 2px;
+  font-size:15px;
+  color:var(--color-text);
+  transition:border-color 0.3s var(--ease-soft);
+}
+.field input[type="text"]:focus,
+.field textarea:focus{ border-color:var(--color-sage); }
+.field textarea{ resize:vertical; min-height:74px; }
+
+.radio-group{ display:flex; gap:22px; }
+.radio-option{ display:flex; align-items:center; gap:8px; font-size:14px; cursor:pointer; }
+.radio-option input{ accent-color:var(--color-sage); width:16px; height:16px; }
+
+.rsvp-submit{ align-self:center; margin-top:6px; }
+
+.rsvp-summary{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  margin-top:48px;
+  padding:18px 0;
+  border-top:1px solid var(--color-line);
+  border-bottom:1px solid var(--color-line);
+}
+.rsvp-summary.is-visible{ display:flex; }
+.rsvp-summary-item{ text-align:center; }
+.rsvp-summary-num{
+  display:block;
+  font-family:var(--font-display);
+  font-size:27px;
+  color:var(--color-sage-dark);
+}
+.rsvp-summary-label{
+  font-size:10.5px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--color-text-muted);
+  margin-top:2px;
+}
+.rsvp-summary-divider{ width:1px; height:30px; background:var(--color-line); }
+
+.ucapan-list{ margin-top:32px; display:flex; flex-direction:column; gap:16px; max-height:420px; overflow-y:auto; padding-right:4px; }
+.ucapan-item{
+  border:1px solid var(--color-line);
+  background:var(--color-card);
+  padding:20px 22px;
+}
+.ucapan-head{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:6px; }
+.ucapan-name{ font-weight:500; font-size:14.5px; }
+.ucapan-status{
+  font-size:10px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:3px 10px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.ucapan-status--hadir{ background:rgba(138,155,126,0.16); color:var(--color-sage-dark); }
+.ucapan-status--tidak{ background:rgba(192,169,125,0.2); color:var(--color-gold-dark); }
+.ucapan-msg{ font-size:14px; color:var(--color-text-muted); }
+.ucapan-empty{ text-align:center; color:var(--color-text-muted); font-size:14px; margin-top:40px; }
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+footer{
+  text-align:center;
+  padding:var(--gap-section) 24px calc(var(--gap-section) + 20px);
+  background:var(--color-bg-soft);
+}
+.footer-names{
+  font-family:var(--font-script);
+  font-size:38px;
+  color:var(--color-text);
+  margin:18px 0 6px;
+}
+.footer-note{ font-size:14px; color:var(--color-text-muted); max-width:420px; margin:0 auto; }
+.footer-credit{ margin-top:38px; font-size:11px; letter-spacing:0.06em; color:var(--color-text-muted); opacity:0.6; }
+
+/* =========================================================
+   13. EFEK VISUAL & MUSIK
+   ========================================================= */
+
+/* --- Progress bar scroll --- */
+.scroll-progress{
+  position:fixed;
+  top:0; left:0;
+  height:3px;
+  width:0%;
+  background:linear-gradient(90deg, var(--color-sage), var(--color-gold));
+  z-index:150;
+  opacity:0;
+  transition:opacity 0.5s var(--ease-soft);
+}
+.scroll-progress.is-active{ opacity:1; }
+
+/* --- Kelopak bunga (petal) --- */
+#petals{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:1;
+}
+.petal{
+  position:absolute;
+  top:-8%;
+  color:var(--color-sage);
+  opacity:0;
+  animation-name:petal-fall;
+  animation-timing-function:ease-in;
+  animation-iteration-count:infinite;
+  will-change:transform, opacity;
+}
+.petal--gold{ color:var(--color-gold); }
+.petal svg{ width:100%; height:100%; display:block; }
+@keyframes petal-fall{
+  0%{ transform:translate(0,-10vh) rotate(0deg); opacity:0; }
+  12%{ opacity:0.75; }
+  88%{ opacity:0.65; }
+  100%{ transform:translate(var(--drift,20px), 115vh) rotate(300deg); opacity:0; }
+}
+.petal--burst{
+  animation-name:petal-burst;
+  animation-timing-function:cubic-bezier(0.2,0.8,0.3,1);
+  animation-iteration-count:1;
+  animation-fill-mode:forwards;
+  top:0;
+}
+@keyframes petal-burst{
+  0%{ transform:translate(0,0) rotate(0deg) scale(0.6); opacity:0.95; }
+  100%{ transform:translate(var(--bx,0), var(--by,-120px)) rotate(220deg) scale(1); opacity:0; }
+}
+
+/* --- Monogram: kilau lembut --- */
+.monogram{ animation:monogram-pulse 4.5s ease-in-out infinite; }
+@keyframes monogram-pulse{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.035); }
+}
+
+/* --- Tombol: kilau saat hover --- */
+.btn{ position:relative; overflow:hidden; }
+.btn::after{
+  content:"";
+  position:absolute;
+  top:0; left:-60%;
+  width:40%; height:100%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform:skewX(-20deg);
+  transition:left 0.7s var(--ease-soft);
+  pointer-events:none;
+}
+.btn:hover::after{ left:130%; }
+
+/* --- Judul section: garis bawah muncul saat reveal --- */
+.section-title{ position:relative; padding-bottom:16px; }
+.section-title::after{
+  content:"";
+  position:absolute;
+  bottom:0; left:50%;
+  width:0;
+  height:1px;
+  background:var(--color-gold);
+  transition:width 0.7s var(--ease-soft) 0.25s, left 0.7s var(--ease-soft) 0.25s;
+}
+.reveal.is-visible .section-title::after{ width:40px; left:calc(50% - 20px); }
+
+/* --- Hero: kemunculan bertahap setelah cover dibuka --- */
+#hero{ position:relative; z-index:2; }
+.hero-item{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 0.9s var(--ease-soft), transform 0.9s var(--ease-soft);
+}
+#hero.hero-in .hero-item:nth-child(1){ transition-delay:0.05s; }
+#hero.hero-in .hero-item:nth-child(2){ transition-delay:0.22s; }
+#hero.hero-in .hero-item:nth-child(3){ transition-delay:0.4s; }
+#hero.hero-in .hero-item:nth-child(4){ transition-delay:0.55s; }
+#hero.hero-in .hero-item:nth-child(5){ transition-delay:0.75s; }
+#hero.hero-in .hero-item{ opacity:1; transform:translateY(0); }
+
+/* --- Galeri: sedikit membesar + bayangan saat hover, kursor pointer --- */
+.gallery-item{ cursor:pointer; }
+.gallery-item:hover{ transform:translateY(-6px); box-shadow:0 18px 30px -18px rgba(46,46,46,0.28); }
+.gallery-item svg{ transition:transform 0.5s var(--ease-soft); }
+.gallery-item:hover svg{ transform:scale(1.12); }
+
+/* --- Lightbox galeri --- */
+.lightbox{
+  position:fixed; inset:0; z-index:300;
+  background:rgba(46,46,46,0.85);
+  display:flex; align-items:center; justify-content:center;
+  padding:24px;
+  opacity:0; pointer-events:none;
+  transition:opacity 0.4s var(--ease-soft);
+}
+.lightbox.is-open{ opacity:1; pointer-events:auto; }
+.lightbox-box{
+  position:relative;
+  background:var(--color-bg);
+  max-width:420px; width:100%;
+  padding:44px 28px 34px;
+  text-align:center;
+  transform:scale(0.94);
+  transition:transform 0.4s var(--ease-soft);
+}
+.lightbox.is-open .lightbox-box{ transform:scale(1); }
+.lightbox-icon{ width:64px; height:64px; margin:0 auto 18px; color:var(--color-sage); opacity:0.7; }
+.lightbox-caption{ font-family:var(--font-display); font-style:italic; font-size:21px; margin-bottom:8px; }
+.lightbox-hint{ font-size:12.5px; color:var(--color-text-muted); }
+.lightbox-close{
+  position:absolute; top:-46px; right:0;
+  width:36px; height:36px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.5);
+  background:transparent;
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  transition:background 0.3s var(--ease-soft);
+}
+.lightbox-close:hover{ background:rgba(255,255,255,0.15); }
+
+/* --- Tombol musik mengambang --- */
+.music-toggle{
+  position:fixed;
+  right:20px; bottom:20px;
+  width:52px; height:52px;
+  border-radius:50%;
+  background:var(--color-card);
+  border:1px solid var(--color-line);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 24px -12px rgba(46,46,46,0.35);
+  z-index:150;
+  color:var(--color-sage-dark);
+  transition:transform 0.3s var(--ease-soft);
+}
+.music-toggle:hover{ transform:translateY(-2px); }
+.music-toggle svg{ width:22px; height:22px; animation:spin 6s linear infinite; animation-play-state:paused; }
+.music-toggle.is-playing svg{ animation-play-state:running; }
+.music-toggle.is-playing{ animation:music-ring 2.2s ease-out infinite; }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+@keyframes music-ring{
+  0%{ box-shadow:0 0 0 0 rgba(138,155,126,0.45); }
+  70%{ box-shadow:0 0 0 12px rgba(138,155,126,0); }
+  100%{ box-shadow:0 0 0 0 rgba(138,155,126,0); }
+}
+
+@media (max-width:480px){
+  .music-toggle{ right:14px; bottom:14px; width:46px; height:46px; }
+  .music-toggle svg{ width:19px; height:19px; }
+  .music-hint{ right:66px; bottom:26px; }
+}
+
+/* --- Hint musik: muncul sekali di awal --- */
+.music-hint{
+  position:fixed;
+  right:76px; bottom:32px;
+  background:var(--color-text);
+  color:#fff;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:12.5px;
+  white-space:nowrap;
+  z-index:149;
+  opacity:0;
+  transform:translateX(8px);
+  pointer-events:none;
+  transition:opacity 0.5s var(--ease-soft), transform 0.5s var(--ease-soft);
+}
+.music-hint::after{
+  content:"";
+  position:absolute;
+  right:-5px; top:50%;
+  width:8px; height:8px;
+  background:var(--color-text);
+  transform:translateY(-50%) rotate(45deg);
+}
+.music-hint.is-visible{ opacity:1; transform:translateX(0); pointer-events:auto; }
+</style>
+</head>
+<body class="lock-scroll">
+
+<!-- Progress bar scroll — muncul setelah undangan dibuka -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- =========================================================
+     COVER
+     ========================================================= -->
+<div id="cover">
+  <div id="petals"></div>
+  <div class="cover-frame">
+    <svg class="cover-corner cover-corner--tl" viewBox="0 0 42 68" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M1 1 C 1 20, 8 30, 22 34 C 34 37, 40 45, 41 67"/><path d="M10 1 C 10 14, 15 20, 24 23"/></svg>
+    <svg class="cover-corner cover-corner--br" viewBox="0 0 42 68" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M1 1 C 1 20, 8 30, 22 34 C 34 37, 40 45, 41 67"/><path d="M10 1 C 10 14, 15 20, 24 23"/></svg>
+  </div>
+  <div class="cover-content">
+    <div class="monogram">B&amp;T</div>
+    <p class="cover-eyebrow" style="margin-top:22px;">The Wedding Of</p>
+    <h1 class="cover-names">Bayu &amp; Triana</h1>
+    <p class="cover-guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+    <p class="cover-guest-name" id="guestName">Keluarga Besar Hartono</p>
+    <button class="btn" id="openBtn" type="button">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8l8 6 8-6M4 6h16v12H4z"/></svg>
+      Buka Undangan
+    </button>
+  </div>
+</div>
+
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+<main id="mainContent">
+
+  <!-- HERO -->
+  <section id="hero" class="section">
+    <div class="hero-eyebrow hero-item"><span class="line"></span><span class="eyebrow">Undangan Pernikahan</span><span class="line"></span></div>
+    <h1 class="hero-names hero-item">
+      <span class="hero-name">Bayu Luky Istanto</span>
+      <span class="hero-amp-row">
+        <svg class="branch branch--mini" viewBox="0 0 42 68" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M21 2c0 18-7 27-7 40 0 10 3 18 7 24"/><path d="M21 20c-6 3-10 7-12 14"/><path d="M21 38c-6 3-10 8-11 15"/></svg>
+        <span class="hero-amp">&amp;</span>
+        <svg class="branch branch--mini branch--flip" viewBox="0 0 42 68" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M21 2c0 18-7 27-7 40 0 10 3 18 7 24"/><path d="M21 20c-6 3-10 7-12 14"/><path d="M21 38c-6 3-10 8-11 15"/></svg>
+      </span>
+      <span class="hero-name">Triana Putri Nastiti</span>
+    </h1>
+    <p class="hero-date hero-item" id="heroDate">02 · 06 · 2027</p>
+    <p class="hero-tagline hero-item">Dengan penuh syukur kepada Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk berkenan hadir dan memberikan doa restu pada hari bahagia kami.</p>
+    <a href="#quote" class="scroll-cue hero-item" aria-label="Gulir ke bawah">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v14M6 12l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- QUOTE -->
+  <section id="quote" class="section section--soft reveal">
+    <div class="section-inner">
+      <!-- Ganti isi quote-text & quote-source untuk mengubah ayat/kutipan -->
+      <p class="quote-text">&ldquo;Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.&rdquo;</p>
+      <p class="quote-source">QS. Ar-Rum : 21</p>
+    </div>
+  </section>
+
+  <!-- PROFIL MEMPELAI -->
+  <section id="profil" class="section reveal">
+    <p class="eyebrow" style="text-align:center;">Kedua Mempelai</p>
+    <h2 class="section-title">Mempelai</h2>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="photo-frame">
+          <div class="profile-photo">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          </div>
+        </div>
+        <h3 class="profile-name">Bayu Luky Istanto</h3>
+        <p class="profile-parents">Putra dari<br>Bpk. Sugito &amp; Ibu Dewi</p>
+      </div>
+      <div class="profile-divider">&amp;</div>
+      <div class="profile-card">
+        <div class="photo-frame">
+          <div class="profile-photo">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          </div>
+        </div>
+        <h3 class="profile-name">Triana Putri Nastiti</h3>
+        <p class="profile-parents">Putri dari<br>Bpk. Imam &amp; Ibu Sri</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section id="countdown" class="section reveal">
+    <p class="eyebrow" style="text-align:center;">Menghitung Hari</p>
+    <h2 class="section-title">Menuju Hari Bahagia</h2>
+    <div class="countdown-grid" id="countdownGrid">
+      <div class="countdown-box"><div class="countdown-num" id="cdHari">00</div><div class="countdown-label">Hari</div></div>
+      <div class="countdown-box"><div class="countdown-num" id="cdJam">00</div><div class="countdown-label">Jam</div></div>
+      <div class="countdown-box"><div class="countdown-num" id="cdMenit">00</div><div class="countdown-label">Menit</div></div>
+      <div class="countdown-box"><div class="countdown-num" id="cdDetik">00</div><div class="countdown-label">Detik</div></div>
+    </div>
+    <p class="countdown-done" id="countdownDone" style="display:none;">Hari bahagia telah tiba!</p>
+  </section>
+
+  <!-- DETAIL ACARA -->
+  <section id="acara" class="section section--soft reveal">
+    <div class="section-inner">
+      <p class="eyebrow" style="text-align:center;">Save The Date</p>
+      <h2 class="section-title">Detail Acara</h2>
+      <div class="event-grid">
+        <div class="event-card">
+          <div class="event-kind">Akad Nikah</div>
+          <p class="event-day">Sabtu, 2 Juni 2027</p>
+          <p class="event-time">Pukul 08.00 WIB &ndash; selesai</p>
+          <p class="event-place">Kediri, Jawa Timur</p>
+          <a class="btn btn--outline" href="https://short.url/kediri" target="_blank" rel="noopener noreferrer">Lihat Lokasi</a>
+        </div>
+        <div class="event-card">
+          <div class="event-kind">Resepsi</div>
+          <p class="event-day">Sabtu, 2 Juni 2027</p>
+          <p class="event-time">Pukul 10.00 WIB &ndash; selesai</p>
+          <p class="event-place">Kediri, Jawa Timur</p>
+          <a class="btn btn--outline" href="https://short.url/kediri" target="_blank" rel="noopener noreferrer">Lihat Lokasi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="section section--wide reveal">
+    <p class="eyebrow" style="text-align:center;">Momen</p>
+    <h2 class="section-title">Galeri</h2>
+    <!-- Foto asli otomatis lazy-load: isi array WEDDING.galleryPhotos di bagian
+         DATA pada kode JavaScript di bawah, mis. ["foto/1.jpg","foto/2.jpg", ...] -->
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- AMPLOP DIGITAL -->
+  <section id="amplop" class="section reveal">
+    <p class="eyebrow" style="text-align:center;">Tanda Kasih</p>
+    <h2 class="section-title">Amplop Digital</h2>
+    <p style="text-align:center; margin-top:16px; color:var(--color-text-muted); font-size:14.5px;">Doa restu Bapak/Ibu/Saudara/i adalah karunia terindah bagi kami. Jika hendak memberikan tanda kasih, kami sediakan beberapa opsi berikut.</p>
+
+    <div class="wallet-tabs" role="tablist">
+      <button class="wallet-tab is-active" type="button" role="tab" aria-selected="true" data-target="panel-bank">Transfer Bank</button>
+      <button class="wallet-tab" type="button" role="tab" aria-selected="false" data-target="panel-ewallet">E-Wallet</button>
+      <button class="wallet-tab" type="button" role="tab" aria-selected="false" data-target="panel-qris">QRIS</button>
+    </div>
+
+    <div class="wallet-panel is-active" id="panel-bank">
+      <div class="bank-card">
+        <p class="bank-name">Bank BCA</p>
+        <p class="bank-number">820282928</p>
+        <p class="bank-owner">a.n. Bayu Luky Istanto</p>
+        <button class="btn copy-btn" type="button" data-copy="820282928">Salin Nomor Rekening</button>
+      </div>
+    </div>
+
+    <div class="wallet-panel" id="panel-ewallet">
+      <!-- Daftar e-wallet dirender otomatis dari WEDDING.ewallets di bagian DATA -->
+      <div class="ewallet-list" id="ewalletList"></div>
+    </div>
+
+    <div class="wallet-panel" id="panel-qris">
+      <div class="qris-card">
+        <div class="qris-frame" id="qrisFrame">
+          <!-- Diisi otomatis oleh skrip: gambar QRIS asli bila WEDDING.qrisImage
+               diisi, atau ikon placeholder bila masih kosong -->
+        </div>
+        <p class="qris-caption" id="qrisCaption">Pindai kode QRIS untuk memberi tanda kasih</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="section reveal">
+    <p class="eyebrow" style="text-align:center;">Konfirmasi Kehadiran</p>
+    <h2 class="section-title">RSVP &amp; Ucapan</h2>
+    <form class="rsvp-form" id="rsvpForm">
+      <div class="field">
+        <label for="rsvpName">Nama</label>
+        <input type="text" id="rsvpName" name="rsvpName" placeholder="Nama lengkap Anda" required>
+      </div>
+      <div class="field">
+        <label>Konfirmasi Kehadiran</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="attendance" value="Hadir" checked> Hadir</label>
+          <label class="radio-option"><input type="radio" name="attendance" value="Tidak Hadir"> Tidak Hadir</label>
+        </div>
+      </div>
+      <div class="field">
+        <label for="rsvpMessage">Ucapan &amp; Doa</label>
+        <textarea id="rsvpMessage" name="rsvpMessage" placeholder="Tuliskan ucapan dan doa terbaik Anda..." required></textarea>
+      </div>
+      <button class="btn rsvp-submit" type="submit">Kirim Ucapan</button>
+    </form>
+
+    <div class="rsvp-summary" id="rsvpSummary">
+      <div class="rsvp-summary-item">
+        <span class="rsvp-summary-num" id="countHadir">0</span>
+        <span class="rsvp-summary-label">Hadir</span>
+      </div>
+      <div class="rsvp-summary-divider"></div>
+      <div class="rsvp-summary-item">
+        <span class="rsvp-summary-num" id="countTidak">0</span>
+        <span class="rsvp-summary-label">Tidak Hadir</span>
+      </div>
+    </div>
+
+    <div class="ucapan-list" id="ucapanList">
+      <p class="ucapan-empty" id="ucapanEmpty">Jadilah yang pertama mengirimkan ucapan dan doa.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="reveal">
+  <div class="monogram">B&amp;T</div>
+  <p class="eyebrow" style="margin-top:20px;">Terima Kasih</p>
+  <p class="footer-note" style="margin-top:14px;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+  <p class="footer-names">Bayu &amp; Triana</p>
+  <p class="footer-note">Kediri, 2 Juni 2027<br>Keluarga Bpk. Sugito &amp; Ibu Dewi &mdash; Keluarga Bpk. Imam &amp; Ibu Sri</p>
+  <p class="footer-credit">Dibuat dengan penuh cinta</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- =========================================================
+     MUSIK LATAR
+     PENTING: letakkan file audio Anda bernama "musik-pernikahan.mp3"
+     di folder YANG SAMA dengan file HTML ini agar musik dapat diputar.
+     Gunakan musik instrumental romantis bebas royalti, misalnya dari
+     Pixabay Music (pixabay.com/music) atau YouTube Audio Library.
+     Format lain (mis. .ogg) bisa ditambahkan sebagai <source> tambahan.
+     ========================================================= -->
+<audio id="bgMusic" loop preload="none">
+  <source src="musik-pernikahan.mp3" type="audio/mpeg">
+</audio>
+<button class="music-toggle" id="musicToggle" type="button" aria-label="Putar musik" aria-pressed="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+    <circle cx="12" cy="12" r="9"/>
+    <circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/>
+    <path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21" stroke-width="1"/>
+  </svg>
+</button>
+<div class="music-hint" id="musicHint">🔊 Nyalakan musik</div>
+
+<!-- =========================================================
+     LIGHTBOX GALERI
+     ========================================================= -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-box">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Tutup">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <svg class="lightbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 21c0-8 4-13 9-15-2 9-5 13-9 15z"/><path d="M12 21c0-8-4-13-9-15 2 9 5 13 9 15z"/></svg>
+    <p class="lightbox-caption" id="lightboxCaption">Foto</p>
+    <p class="lightbox-hint">Isi WEDDING.galleryPhotos di kode agar foto asli tampil di sini</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =======================================================
+     DATA — ganti nilai di sini untuk memperbarui undangan
+     ======================================================= */
+  var WEDDING = {
+    groomName:   "Bayu Luky Istanto",
+    brideName:   "Triana Putri Nastiti",
+    akadDateISO: "2027-06-02T08:00:00+07:00", // waktu akad (WIB) — dipakai countdown
+    defaultGuest: "Keluarga Besar Hartono",
+    // Isi array ini dengan path foto asli Anda (mis. "foto/1.jpg") untuk
+    // menggantikan placeholder galeri — otomatis di-lazy-load oleh browser.
+    // Kosongkan (biarkan []) untuk tetap memakai placeholder.
+    galleryPhotos: [],
+    // Daftar e-wallet untuk tab "E-Wallet" — ganti nomor sesuai milik Anda.
+    // Tambah/hapus baris untuk menambah atau mengurangi e-wallet yang tampil.
+    ewallets: [
+      { name: "GoPay", number: "0812-3456-7890", owner: "Bayu Luky Istanto" },
+      { name: "OVO",   number: "0812-3456-7890", owner: "Bayu Luky Istanto" },
+      { name: "DANA",  number: "0812-3456-7890", owner: "Bayu Luky Istanto" }
+    ],
+    // Isi dengan path gambar QRIS Anda (mis. "qris.png") agar tampil di tab
+    // "QRIS" — kosongkan ("") untuk tetap memakai placeholder.
+    qrisImage: ""
+  };
+
+  /* =======================================================
+     GUEST NAME dari query string ?to=Nama (opsional)
+     Contoh: undangan.html?to=Bapak%20Andi
+     ======================================================= */
+  function initGuestName(){
+    var params = new URLSearchParams(window.location.search);
+    var guest = params.get("to");
+    var el = document.getElementById("guestName");
+    el.textContent = guest && guest.trim() ? guest.trim() : WEDDING.defaultGuest;
+  }
+
+  /* =======================================================
+     COVER — buka undangan
+     ======================================================= */
+  function initCover(){
+    var cover = document.getElementById("cover");
+    var openBtn = document.getElementById("openBtn");
+    var hero = document.getElementById("hero");
+    var progress = document.getElementById("scrollProgress");
+    openBtn.addEventListener("click", function(){
+      cover.classList.add("is-open");
+      document.body.classList.remove("lock-scroll");
+      progress.classList.add("is-active");
+      setTimeout(function(){ cover.classList.add("is-hidden"); }, 1000);
+      // munculkan hero secara bertahap begitu cover mulai bergeser
+      setTimeout(function(){ hero.classList.add("hero-in"); }, 250);
+      // trigger reveal check segera setelah cover terbuka
+      setTimeout(checkReveal, 150);
+    });
+  }
+
+  /* =======================================================
+     KELOPAK BUNGA (petal) — dekorasi & efek perayaan
+     ======================================================= */
+  var PETAL_PATH = 'M12 2C8 7 4 10 4 14a8 8 0 0 0 16 0c0-4-4-7-8-12z';
+
+  function initPetalsCover(){
+    var container = document.getElementById("petals");
+    if(!container) return;
+    var count = 11;
+    for(var i=0; i<count; i++){
+      var petal = document.createElement("div");
+      petal.className = "petal" + (Math.random() < 0.4 ? " petal--gold" : "");
+      var size = 9 + Math.random() * 9;
+      petal.style.left = (Math.random() * 100) + "%";
+      petal.style.width = size + "px";
+      petal.style.height = size + "px";
+      petal.style.setProperty("--drift", (Math.random() * 70 - 35) + "px");
+      petal.style.animationDuration = (7 + Math.random() * 6) + "s";
+      petal.style.animationDelay = (Math.random() * 7) + "s";
+      petal.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="' + PETAL_PATH + '"/></svg>';
+      container.appendChild(petal);
+    }
+  }
+
+  function burstPetals(originEl){
+    if(!originEl) return;
+    var rect = originEl.getBoundingClientRect();
+    var originX = rect.left + rect.width / 2;
+    var originY = rect.top + rect.height / 2;
+    for(var i=0; i<12; i++){
+      var petal = document.createElement("div");
+      petal.className = "petal petal--burst" + (Math.random() < 0.4 ? " petal--gold" : "");
+      var size = 8 + Math.random() * 8;
+      petal.style.position = "fixed";
+      petal.style.left = originX + "px";
+      petal.style.top = originY + "px";
+      petal.style.width = size + "px";
+      petal.style.height = size + "px";
+      petal.style.zIndex = "250";
+      var angle = Math.random() * Math.PI * 2;
+      var dist = 55 + Math.random() * 95;
+      petal.style.setProperty("--bx", Math.cos(angle) * dist + "px");
+      petal.style.setProperty("--by", (Math.sin(angle) * dist - 45) + "px");
+      var duration = 0.7 + Math.random() * 0.5;
+      petal.style.animationDuration = duration + "s";
+      petal.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="' + PETAL_PATH + '"/></svg>';
+      document.body.appendChild(petal);
+      (function(el, dur){
+        setTimeout(function(){ el.remove(); }, dur * 1000 + 80);
+      })(petal, duration);
+    }
+  }
+
+  /* =======================================================
+     PROGRESS BAR SCROLL
+     ======================================================= */
+  function initScrollProgress(){
+    var bar = document.getElementById("scrollProgress");
+    if(!bar) return;
+    var ticking = false;
+    function update(){
+      var doc = document.documentElement;
+      var scrollTop = window.scrollY || doc.scrollTop;
+      var height = doc.scrollHeight - doc.clientHeight;
+      var pct = height > 0 ? (scrollTop / height) * 100 : 0;
+      bar.style.width = pct + "%";
+      ticking = false;
+    }
+    window.addEventListener("scroll", function(){
+      if(!ticking){ window.requestAnimationFrame(update); ticking = true; }
+    });
+    update();
+  }
+
+  /* =======================================================
+     MUSIK LATAR
+     ======================================================= */
+  function initMusic(){
+    var audio = document.getElementById("bgMusic");
+    var btn = document.getElementById("musicToggle");
+    var openBtn = document.getElementById("openBtn");
+    if(!audio || !btn) return;
+
+    function setPlaying(isPlaying){
+      btn.classList.toggle("is-playing", isPlaying);
+      btn.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+      btn.setAttribute("aria-label", isPlaying ? "Jeda musik" : "Putar musik");
+    }
+    function tryPlay(){
+      var p = audio.play();
+      if(p && p.catch){
+        p.then(function(){ setPlaying(true); }).catch(function(){ setPlaying(false); });
+      }
+    }
+    btn.addEventListener("click", function(){
+      if(audio.paused){ tryPlay(); } else { audio.pause(); }
+    });
+    audio.addEventListener("pause", function(){ setPlaying(false); });
+    audio.addEventListener("playing", function(){ setPlaying(true); });
+    audio.addEventListener("error", function(){ /* file musik belum tersedia — tombol tetap bisa dipakai nanti */ });
+
+    // Coba putar otomatis begitu undangan dibuka (masih dalam gesture klik pengguna)
+    openBtn.addEventListener("click", function(){ tryPlay(); });
+  }
+
+  /* =======================================================
+     HINT MUSIK — muncul sekali saja di awal
+     ======================================================= */
+  function initMusicHint(){
+    var hint = document.getElementById("musicHint");
+    var openBtn = document.getElementById("openBtn");
+    var musicBtn = document.getElementById("musicToggle");
+    if(!hint || !openBtn || !musicBtn) return;
+    var hasShown = false;
+    var hideTimer;
+
+    function hide(){ hint.classList.remove("is-visible"); }
+
+    openBtn.addEventListener("click", function(){
+      if(hasShown) return;
+      hasShown = true;
+      setTimeout(function(){
+        hint.classList.add("is-visible");
+        hideTimer = setTimeout(hide, 4500);
+      }, 1400);
+    });
+
+    musicBtn.addEventListener("click", function(){
+      clearTimeout(hideTimer);
+      hide();
+    });
+  }
+
+  /* =======================================================
+     LIGHTBOX GALERI
+     ======================================================= */
+  function initLightbox(){
+    var lightbox = document.getElementById("lightbox");
+    var caption = document.getElementById("lightboxCaption");
+    var closeBtn = document.getElementById("lightboxClose");
+    var grid = document.getElementById("galleryGrid");
+    if(!lightbox || !grid) return;
+
+    grid.addEventListener("click", function(e){
+      var item = e.target.closest ? e.target.closest(".gallery-item") : null;
+      if(!item) return;
+      var label = item.querySelector(".gallery-caption");
+      caption.textContent = label ? label.textContent : "Foto";
+      lightbox.classList.add("is-open");
+    });
+    function close(){ lightbox.classList.remove("is-open"); }
+    closeBtn.addEventListener("click", close);
+    lightbox.addEventListener("click", function(e){ if(e.target === lightbox) close(); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape") close(); });
+  }
+
+  /* =======================================================
+     SCROLL REVEAL
+     ======================================================= */
+  var revealEls = [];
+  var observer;
+  function initReveal(){
+    revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+    if("IntersectionObserver" in window){
+      observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold:0.15 });
+      revealEls.forEach(function(el){ observer.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add("is-visible"); });
+    }
+  }
+  function checkReveal(){
+    revealEls.forEach(function(el){
+      var rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.9){ el.classList.add("is-visible"); }
+    });
+  }
+
+  /* =======================================================
+     COUNTDOWN
+     ======================================================= */
+  function initCountdown(){
+    var target = new Date(WEDDING.akadDateISO).getTime();
+    var elHari = document.getElementById("cdHari");
+    var elJam = document.getElementById("cdJam");
+    var elMenit = document.getElementById("cdMenit");
+    var elDetik = document.getElementById("cdDetik");
+    var grid = document.getElementById("countdownGrid");
+    var done = document.getElementById("countdownDone");
+
+    function pad(n){ return String(n).padStart(2,"0"); }
+
+    function tick(){
+      var now = Date.now();
+      var diff = target - now;
+      if(diff <= 0){
+        clearInterval(timer);
+        grid.style.display = "none";
+        done.style.display = "block";
+        celebrateCountdown(done);
+        return;
+      }
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      elHari.textContent = pad(d);
+      elJam.textContent = pad(h);
+      elMenit.textContent = pad(m);
+      elDetik.textContent = pad(s);
+    }
+    tick();
+    var timer = setInterval(tick, 1000);
+  }
+
+  /* Semburan kelopak bunga perayaan saat countdown mencapai nol */
+  function celebrateCountdown(targetEl){
+    var bursts = 0;
+    var celebrateTimer = setInterval(function(){
+      burstPetals(targetEl);
+      bursts++;
+      if(bursts >= 3){ clearInterval(celebrateTimer); }
+    }, 280);
+  }
+
+  /* =======================================================
+     GALERI — placeholder, otomatis jadi foto asli + lazy-load
+     begitu WEDDING.galleryPhotos diisi (lihat blok DATA di atas)
+     ======================================================= */
+  function initGallery(){
+    var grid = document.getElementById("galleryGrid");
+    var leafSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21c0-8 4-13 9-15-2 9-5 13-9 15z"/><path d="M12 21c0-8-4-13-9-15 2 9 5 13 9 15z"/></svg>';
+    var photos = WEDDING.galleryPhotos || [];
+    var total = Math.max(photos.length, 6);
+
+    for(var i=0; i<total; i++){
+      var item = document.createElement("div");
+      item.className = "gallery-item";
+      var label = "Foto " + (i + 1);
+      if(photos[i]){
+        // loading="lazy" -> browser hanya memuat gambar saat mendekati layar
+        item.innerHTML =
+          '<img src="' + photos[i] + '" alt="' + label + '" loading="lazy" decoding="async">' +
+          '<span class="gallery-caption">' + label + '</span>';
+      } else {
+        item.innerHTML = leafSVG + '<span class="gallery-caption">' + label + '</span>';
+      }
+      grid.appendChild(item);
+    }
+  }
+
+  /* =======================================================
+     AMPLOP DIGITAL — tab Transfer Bank / E-Wallet / QRIS
+     ======================================================= */
+  function initWalletTabs(){
+    var tabs = document.querySelectorAll(".wallet-tab");
+    var panels = document.querySelectorAll(".wallet-panel");
+    tabs.forEach(function(tab){
+      tab.addEventListener("click", function(){
+        tabs.forEach(function(t){ t.classList.remove("is-active"); t.setAttribute("aria-selected", "false"); });
+        panels.forEach(function(p){ p.classList.remove("is-active"); });
+        tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
+        var target = document.getElementById(tab.getAttribute("data-target"));
+        if(target){ target.classList.add("is-active"); }
+      });
+    });
+  }
+
+  function renderEwallets(){
+    var list = document.getElementById("ewalletList");
+    if(!list) return;
+    var wallets = WEDDING.ewallets || [];
+    wallets.forEach(function(w){
+      var item = document.createElement("div");
+      item.className = "ewallet-item";
+      item.innerHTML =
+        '<div class="ewallet-badge"></div>' +
+        '<div class="ewallet-info">' +
+          '<div class="ewallet-name"></div>' +
+          '<div class="ewallet-number"></div>' +
+        '</div>' +
+        '<button class="ewallet-copy copy-btn" type="button">Salin</button>';
+      item.querySelector(".ewallet-badge").textContent = w.name.slice(0, 2).toUpperCase();
+      item.querySelector(".ewallet-name").textContent = w.name + (w.owner ? " · a.n. " + w.owner : "");
+      item.querySelector(".ewallet-number").textContent = w.number;
+      item.querySelector(".copy-btn").setAttribute("data-copy", w.number);
+      list.appendChild(item);
+    });
+  }
+
+  function renderQRIS(){
+    var frame = document.getElementById("qrisFrame");
+    var caption = document.getElementById("qrisCaption");
+    if(!frame) return;
+    if(WEDDING.qrisImage){
+      frame.innerHTML = '<img src="' + WEDDING.qrisImage + '" alt="Kode QRIS" loading="lazy" decoding="async">';
+      caption.textContent = "Pindai kode QRIS untuk memberi tanda kasih";
+    } else {
+      frame.innerHTML =
+        '<div class="qris-placeholder">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">' +
+            '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>' +
+            '<rect x="3" y="14" width="7" height="7"/>' +
+            '<path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20v.01"/>' +
+          '</svg>' +
+        '</div>';
+      caption.textContent = "Isi WEDDING.qrisImage di kode dengan gambar QRIS Anda";
+    }
+  }
+
+  /* =======================================================
+     SALIN NOMOR (bank & e-wallet, via atribut data-copy)
+     ======================================================= */
+  function initCopy(){
+    var buttons = document.querySelectorAll(".copy-btn");
+    buttons.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var value = btn.getAttribute("data-copy") || "";
+        copyText(value).then(function(){
+          showToast("Nomor tersalin!");
+        }).catch(function(){
+          showToast("Gagal menyalin, salin manual: " + value);
+        });
+      });
+    });
+  }
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve, reject){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        resolve();
+      }catch(err){ reject(err); }
+    });
+  }
+  var toastTimer;
+  function showToast(message){
+    var toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("is-visible");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("is-visible"); }, 2600);
+  }
+
+  /* =======================================================
+     RSVP — disimpan di memori (array JS), bukan localStorage
+     ======================================================= */
+  var ucapanData = [];
+
+  function initRSVP(){
+    var form = document.getElementById("rsvpForm");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name = document.getElementById("rsvpName").value.trim();
+      var message = document.getElementById("rsvpMessage").value.trim();
+      var attendance = form.querySelector('input[name="attendance"]:checked').value;
+      if(!name || !message) return;
+
+      ucapanData.unshift({ name:name, attendance:attendance, message:message });
+      renderUcapan();
+      burstPetals(form.querySelector(".rsvp-submit"));
+      form.reset();
+      showToast("Terima kasih atas ucapan & doanya!");
+    });
+    renderUcapan();
+  }
+
+  function renderUcapan(){
+    var list = document.getElementById("ucapanList");
+    var empty = document.getElementById("ucapanEmpty");
+    var summary = document.getElementById("rsvpSummary");
+    list.innerHTML = "";
+
+    if(ucapanData.length === 0){
+      list.appendChild(empty);
+      summary.classList.remove("is-visible");
+      return;
+    }
+
+    var hadirCount = ucapanData.filter(function(item){ return item.attendance === "Hadir"; }).length;
+    var tidakCount = ucapanData.length - hadirCount;
+    document.getElementById("countHadir").textContent = hadirCount;
+    document.getElementById("countTidak").textContent = tidakCount;
+    summary.classList.add("is-visible");
+
+    ucapanData.forEach(function(item){
+      var el = document.createElement("div");
+      el.className = "ucapan-item";
+      var statusClass = item.attendance === "Hadir" ? "ucapan-status--hadir" : "ucapan-status--tidak";
+      el.innerHTML =
+        '<div class="ucapan-head">' +
+          '<span class="ucapan-name"></span>' +
+          '<span class="ucapan-status ' + statusClass + '"></span>' +
+        '</div>' +
+        '<p class="ucapan-msg"></p>';
+      el.querySelector(".ucapan-name").textContent = item.name;
+      el.querySelector(".ucapan-status").textContent = item.attendance;
+      el.querySelector(".ucapan-msg").textContent = item.message;
+      list.appendChild(el);
+    });
+  }
+
+  /* =======================================================
+     INIT
+     ======================================================= */
+  document.addEventListener("DOMContentLoaded", function(){
+    initGuestName();
+    initCover();
+    initReveal();
+    initCountdown();
+    initGallery();
+    renderEwallets();
+    renderQRIS();
+    initWalletTabs();
+    initCopy();
+    initRSVP();
+    initPetalsCover();
+    initScrollProgress();
+    initMusic();
+    initMusicHint();
+    initLightbox();
+  });
+})();
+</script>
+</body>
+</html>
